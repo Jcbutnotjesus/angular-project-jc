@@ -1,17 +1,3 @@
-<<<<<<< Updated upstream:src/app/student/pages/student-details/student-details.component.ts
-import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-student-details',
-  templateUrl: './student-details.component.html',
-  styleUrls: ['./student-details.component.scss']
-})
-export class StudentDetailsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-=======
 import { SchoolFormData } from '../../../core/models/schoolFormData';
 import { SchoolFormComponent } from '../../components/school-form/school-form.component';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -75,7 +61,9 @@ export class SchoolDetailsComponent implements OnInit {
 
       this._router.navigateByUrl('/school');
     });
->>>>>>> Stashed changes:src/app/school/pages/school-details/school-details.component.ts
   }
 
+  goBack() {
+    this._location.back();
+  }
 }

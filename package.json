@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": " npm-run-all --parallel Front Back",
-    "Front": "cd lp-dim-app && ng serve",
+    "Front": "cd Frontend && ng serve",
     "Back": "node ./Backend/bin/www"
   },
   "author": "",
