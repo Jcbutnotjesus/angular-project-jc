@@ -8,6 +8,7 @@ import { School } from 'src/app/core/models/school';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Location } from '@angular/common';
+import { Education } from 'src/app/core/models/education';
 
 @Component({
   selector: 'app-school-details',
@@ -16,6 +17,7 @@ import { Location } from '@angular/common';
 })
 export class SchoolDetailsComponent implements OnInit {
   school$: Observable<School>;
+  education$: Observable<Education[]>;
   constructor(
     private _schoolService: SchoolService,
     private _activatedRoute: ActivatedRoute,
@@ -28,11 +30,16 @@ export class SchoolDetailsComponent implements OnInit {
   ngOnInit(): void {
     this._activatedRoute.params.subscribe((params) => {
       this.fetchData(params['id']);
+      this.fetchDataEducation(params['id']);
     });
   }
 
   fetchData(id: number) {
     this.school$ = this._schoolService.getById(id);
+  }
+
+  fetchDataEducation(id: number) {
+    this.education$ = this._schoolService.getEducationBySchool(id);
   }
 
   updateSchool(school: School) {

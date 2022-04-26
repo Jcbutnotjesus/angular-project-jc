@@ -3,6 +3,7 @@ import { School } from '../../core/models/school';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { max, Observable } from 'rxjs';
+import { Education } from 'src/app/core/models/education';
 
 @Injectable()
 export class SchoolService {
@@ -19,6 +20,12 @@ export class SchoolService {
   getById(id: number): Observable<School> {
     return this._http.get<School>(
       `${environment.apiBaseUrl}${this.schoolPath}/${id}`
+    );
+  }
+
+  getEducationBySchool(id: number): Observable<Education[]> {
+    return this._http.get<Education[]>(
+      `${environment.apiBaseUrl}${this.schoolPath}/${id}/education`
     );
   }
 

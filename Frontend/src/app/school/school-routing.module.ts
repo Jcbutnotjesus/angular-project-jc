@@ -17,6 +17,10 @@ const routes: Routes = [
         path: ':id',
         component: SchoolDetailsComponent,
       },
+      {
+        path: ':id/education',
+        component: SchoolDetailsComponent,
+      },
     ],
   },
 ];

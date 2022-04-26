@@ -1,6 +1,7 @@
 <p>school-details works!</p>
 
 {{ school$ | async | json }}
+{{ education$ | async | json }}
 
 <mat-card class="example-card" *ngIf="school$ | async; let school">
   <mat-card-header>
