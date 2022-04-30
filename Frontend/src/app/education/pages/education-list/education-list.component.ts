@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { EducationFormData } from 'src/app/core/models/educationFormData';
 import { EducationService } from 'src/app/school/services/education.service';
+import { EducationFormComponent } from '../../components/school-form/education-form.component';
 
 @Component({
   selector: 'app-education-list',
@@ -36,20 +37,20 @@ export class EducationListComponent implements OnInit {
     this._router.navigateByUrl('/education/' + education.id);
   }
 
-  // createEducation() {
-  //   const educationFormData: EducationFormData = {
-  //     isUpdateMode: false,
-  //     idToCreate: Math.max(...this.ids) + 1,
-  //   };
+  createEducation() {
+    const educationFormData: EducationFormData = {
+      isUpdateMode: false,
+      idToCreate: Math.max(...this.ids) + 1,
+    };
 
-  //   const dialogRef = this._dialog.open(EducationFormComponent, {
-  //     data: educationFormData,
-  //   });
+    const dialogRef = this._dialog.open(EducationFormComponent, {
+      data: educationFormData,
+    });
 
-  //   dialogRef.afterClosed().subscribe((result) => {
-  //     this.fetchData();
-  //   });
-  // }
+    dialogRef.afterClosed().subscribe((result) => {
+      this.fetchData();
+    });
+  }
 
   setId(id: number) {
     //Bidouille

@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>{{ isUpdateMode ? "Update" : "Add" }} education form</h2>
+
+<form [formGroup]="educationForm" (ngSubmit)="onSubmit(educationForm.value)">
+  <mat-dialog-content class="mat-typography">
+    <mat-form-field appearance="fill">
+      <mat-label>educationName</mat-label>
+      <input matInput formControlName="educationName" />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Link</mat-label>
+      <input matInput formControlName="link" />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>KeyWords</mat-label>
+      <input matInput formControlName="keyWords" />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>schoolId</mat-label>
+      <input matInput formControlName="schoolId" />
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions class="float-right">
+    <button mat-button (click)="closeForm()">Annuler</button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!educationForm.valid"
+    >
+      {{ isUpdateMode ? "Modifier" : "Ajouter" }}
+    </button>
+  </mat-dialog-actions>
+</form>

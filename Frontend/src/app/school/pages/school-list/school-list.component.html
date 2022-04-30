@@ -1,7 +1,7 @@
 <h3>List Of School</h3>
 <table mat-table [dataSource]="school$" class="mat-elevation-z8">
   <!-- Name Column -->
-  <ng-container matColumnDef="id">
+  <ng-container matColumnDef="id" class="id">
     <th mat-header-cell *matHeaderCellDef>ID</th>
     <td mat-cell *matCellDef="let element">
       {{ element.id }}
@@ -33,9 +33,10 @@
 </table>
 
 <br />
-
-<button mat-raised-button color="primary" (click)="createSchool()">
-  Create new school
-</button>
+<div class="bouton">
+  <button mat-raised-button color="primary" (click)="createSchool()">
+    Create new school
+  </button>
+</div>
 
 <br />

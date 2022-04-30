@@ -33,3 +33,23 @@ h3 {
   align-items: center;
   text-transform: uppercase;
 }
+
+th {
+  text-align: center !important;
+
+  border-right: 1px solid black;
+}
+
+td {
+  text-align: center;
+  border-right: 1px solid black;
+}
+
+.id {
+  padding-right: 20%;
+}
+
+.bouton {
+  text-align: center;
+  margin-top: 4%;
+}

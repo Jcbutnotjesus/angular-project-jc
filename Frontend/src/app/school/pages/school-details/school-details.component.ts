@@ -85,8 +85,8 @@ export class SchoolDetailsComponent implements OnInit {
     });
   }
 
-  showEdcuDetails(school: School) {
-    this._router.navigateByUrl('/school/' + school.id);
+  showEducationDetails(education: Education) {
+    this._router.navigateByUrl('/education/' + education.id);
   }
 
   setId(id: number) {

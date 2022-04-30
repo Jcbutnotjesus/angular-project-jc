@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Location } from '@angular/common';
 import { EducationService } from 'src/app/school/services/education.service';
+import { EducationFormComponent } from '../../components/school-form/education-form.component';
 
 @Component({
   selector: 'app-education-details',
@@ -38,22 +39,22 @@ export class EducationDetailsComponent implements OnInit {
     this.education$ = this._educationService.getById(id);
   }
 
-  // updateEducation(education: Education) {
-  //   const educationFormData: EducationFormData = {
-  //     isUpdateMode: true,
-  //     educationToUpdate: education,
-  //   };
+  updateEducation(education: Education) {
+    const educationFormData: EducationFormData = {
+      isUpdateMode: true,
+      educationToUpdate: education,
+    };
 
-  // const dialogRef = this._dialog.open(EducationFormComponent, {
-  //   data: educationFormData,
-  // });
+    const dialogRef = this._dialog.open(EducationFormComponent, {
+      data: educationFormData,
+    });
 
-  //   dialogRef.afterClosed().subscribe((result) => {
-  //     if (result) {
-  //       this.fetchData(result);
-  //     }
-  //   });
-  // }
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.fetchData(result);
+      }
+    });
+  }
 
   deleteEducation(id: number) {
     this._educationService.delete(id).subscribe((response) => {

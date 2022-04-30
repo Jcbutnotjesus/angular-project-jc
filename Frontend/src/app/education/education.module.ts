@@ -11,12 +11,13 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatTableModule } from '@angular/material/table';
 import { EducationService } from '../school/services/education.service';
 import { EducationListComponent } from './pages/education-list/education-list.component';
+import { EducationFormComponent } from './components/school-form/education-form.component';
 
 @NgModule({
   declarations: [
     EducationComponent,
     EducationDetailsComponent,
-    // EducationFormComponent,
+    EducationFormComponent,
     EducationListComponent,
   ],
   imports: [

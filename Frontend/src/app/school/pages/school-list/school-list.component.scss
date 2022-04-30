@@ -11,3 +11,22 @@ h3 {
   color: #3f51b5;
   text-transform: uppercase;
 }
+
+th {
+  text-align: center !important;
+
+  border-right: 1px solid black;
+}
+
+td {
+  text-align: center;
+  border-right: 1px solid black;
+}
+
+.id {
+  padding-right: 20%;
+}
+
+.bouton {
+  text-align: center;
+}
