@@ -13,6 +13,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./school/school.module').then((m) => m.SchoolModule),
   },
+  // {
+  //   path: 'education',
+  //   loadChildren: () =>
+  //     import('./education/education.module').then((m) => m.EducationModule),
+  // },
   {
     path: '**',
     component: NotFoundComponent,

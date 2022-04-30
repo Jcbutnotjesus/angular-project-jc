@@ -1,6 +1,6 @@
 {{ education$ | async | json }}
 
-<table mat-table [dataSource]="education" class="mat-elevation-z8">
+<table mat-table [dataSource]="education$" class="mat-elevation-z8">
   <!-- Name Column -->
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>ID</th>
@@ -11,9 +11,9 @@
   </ng-container>
 
   <!-- Name Column -->
-  <ng-container matColumnDef="schoolName">
-    <th mat-header-cell *matHeaderCellDef>SchoolName</th>
-    <td mat-cell *matCellDef="let element">{{ element.schoolName }}</td>
+  <ng-container matColumnDef="educationName">
+    <th mat-header-cell *matHeaderCellDef>EducationName</th>
+    <td mat-cell *matCellDef="let element">{{ element.educationName }}</td>
   </ng-container>
 
   <!-- Name Column -->
@@ -22,19 +22,24 @@
     <td mat-cell *matCellDef="let element">{{ element.link }}</td>
   </ng-container>
 
+  <ng-container matColumnDef="KeyWords">
+    <th mat-header-cell *matHeaderCellDef>KeyWords</th>
+    <td mat-cell *matCellDef="let element">{{ element.keyWords }}</td>
+  </ng-container>
+
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr
     mat-row
     *matRowDef="let row; columns: displayedColumns"
-    (click)="showSchoolDetails(row)"
+    (click)="showEducationDetails(row)"
     class="clickable"
   ></tr>
 </table>
 
 <br />
 
-<button mat-raised-button color="primary" (click)="createSchool()">
+<!-- <button mat-raised-button color="primary" (click)="createEducation()">
   Create
-</button>
+</button> -->
 
 <br />

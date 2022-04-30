@@ -1,0 +1,23 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-right: 15%;
+  margin-left: 15%;
+}
+
+.nav a {
+  color: whitesmoke;
+  text-decoration: none;
+  margin-top: 1.5%;
+}
+
+.title {
+  text-align: center;
+}
+
+.title h1 {
+  font-size: xx-large;
+  margin-top: 2%;
+  text-transform: uppercase;
+}

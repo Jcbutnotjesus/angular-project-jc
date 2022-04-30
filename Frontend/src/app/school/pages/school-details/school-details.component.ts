@@ -18,6 +18,8 @@ import { Education } from 'src/app/core/models/education';
 export class SchoolDetailsComponent implements OnInit {
   school$: Observable<School>;
   education$: Observable<Education[]>;
+  displayedColumns: string[] = ['id', 'educationName', 'link', 'keyWords'];
+
   constructor(
     private _schoolService: SchoolService,
     private _activatedRoute: ActivatedRoute,
@@ -27,10 +29,13 @@ export class SchoolDetailsComponent implements OnInit {
     private _location: Location
   ) {}
 
+  ids: number[] = [];
+
   ngOnInit(): void {
     this._activatedRoute.params.subscribe((params) => {
       this.fetchData(params['id']);
       this.fetchDataEducation(params['id']);
+      this.education$ = this._schoolService.getEducationBySchool(params['id']);
     });
   }
 
@@ -68,6 +73,22 @@ export class SchoolDetailsComponent implements OnInit {
 
       this._router.navigateByUrl('/school');
     });
+  }
+
+  deleteEducation(id: number) {
+    this._schoolService.delete(id).subscribe((response) => {
+      this._snackBar.open(response, '', {
+        duration: 2000,
+        panelClass: ['mat-toolbar', 'mat-accent'],
+      });
+
+      this._router.navigateByUrl('/school');
+    });
+  }
+
+  setId(id: number) {
+    //Bidouille
+    this.ids.push(id);
   }
 
   goBack() {

@@ -2,6 +2,6 @@ export interface Education {
   id: number;
   educationName: string;
   keyWords: string;
-  links: string;
+  link: string;
   schoolId: number;
 }

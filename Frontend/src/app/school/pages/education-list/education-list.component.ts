@@ -1,26 +1,31 @@
-import { School } from '../../../core/models/school';
+import { Education } from '../../../core/models/education';
 import { max, Observable, of } from 'rxjs';
-import { SchoolService } from '../../services/school.service';
+import { EducationService } from '../../services/education.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { SchoolFormComponent } from '../../components/school-form/school-form.component';
-import { SchoolFormData } from 'src/app/core/models/schoolFormData';
+// import { EducationFormData } from 'src/app/core/models/educationFormData';
 
 @Component({
-  selector: 'app-school-list',
-  templateUrl: './school-list.component.html',
-  styleUrls: ['./school-list.component.scss'],
+  selector: 'app-education-list',
+  templateUrl: './education-list.component.html',
+  styleUrls: ['./education-list.component.scss'],
 })
-export class SchoolListComponent implements OnInit {
-  school$: Observable<School[]>;
-  displayedColumns: string[] = ['id', 'schoolName', 'link'];
+export class EducationListComponent implements OnInit {
+  education$: Observable<Education[]>;
+  displayedColumns: string[] = [
+    'id',
+    'educationName',
+    'link',
+    'keyWords',
+    'schoolId',
+  ];
 
   //Bidouille
   ids: number[] = [];
 
   constructor(
-    private _schoolService: SchoolService,
+    private _educationService: EducationService,
     private _router: Router,
     public _dialog: MatDialog
   ) {}
@@ -30,31 +35,27 @@ export class SchoolListComponent implements OnInit {
   }
 
   fetchData() {
-    this.school$ = this._schoolService.get();
+    this.education$ = this._educationService.get();
   }
 
-  showSchoolDetails(school: School) {
-    this._router.navigateByUrl('/school/' + school.id);
+  showEducationDetails(education: Education) {
+    this._router.navigateByUrl('/education/' + education.id);
   }
 
-  showEducationBySchool(school: School) {
-    this._router.navigateByUrl('/school/' + school.id);
-  }
+  // createEducation() {
+  //   const educationFormData: EducationFormData = {
+  //     isUpdateMode: false,
+  //     idToCreate: Math.max(...this.ids) + 1,
+  //   };
 
-  createSchool() {
-    const schoolFormData: SchoolFormData = {
-      isUpdateMode: false,
-      idToCreate: Math.max(...this.ids) + 1,
-    };
+  //   const dialogRef = this._dialog.open(EducationFormComponent, {
+  //     data: educationFormData,
+  //   });
 
-    const dialogRef = this._dialog.open(SchoolFormComponent, {
-      data: schoolFormData,
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      this.fetchData();
-    });
-  }
+  //   dialogRef.afterClosed().subscribe((result) => {
+  //     this.fetchData();
+  //   });
+  // }
 
   setId(id: number) {
     //Bidouille

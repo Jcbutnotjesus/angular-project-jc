@@ -37,10 +37,6 @@ export class SchoolListComponent implements OnInit {
     this._router.navigateByUrl('/school/' + school.id);
   }
 
-  showEducationBySchool(school: School) {
-    this._router.navigateByUrl('/school/' + school.id);
-  }
-
   createSchool() {
     const schoolFormData: SchoolFormData = {
       isUpdateMode: false,

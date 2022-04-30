@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { max, Observable } from 'rxjs';
 
 @Injectable()
-export class SchoolService {
+export class EducationService {
   private readonly educationPath: string = '/education';
 
   constructor(private _http: HttpClient) {}
