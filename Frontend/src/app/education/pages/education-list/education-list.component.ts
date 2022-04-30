@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { EducationFormData } from 'src/app/core/models/educationFormData';
 import { EducationService } from 'src/app/school/services/education.service';
-import { EducationFormComponent } from '../../components/school-form/education-form.component';
+import { EducationFormComponent } from '../../components/education-form/education-form.component';
 
 @Component({
   selector: 'app-education-list',
@@ -14,7 +14,13 @@ import { EducationFormComponent } from '../../components/school-form/education-f
 })
 export class EducationListComponent implements OnInit {
   education$: Observable<Education[]>;
-  displayedColumns: string[] = ['id', 'educationName', 'link'];
+  displayedColumns: string[] = [
+    'id',
+    'educationName',
+    'link',
+    'keyWords',
+    'schoolId',
+  ];
 
   //Bidouille
   ids: number[] = [];

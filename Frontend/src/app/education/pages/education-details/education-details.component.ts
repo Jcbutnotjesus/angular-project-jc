@@ -7,7 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Location } from '@angular/common';
 import { EducationService } from 'src/app/school/services/education.service';
-import { EducationFormComponent } from '../../components/school-form/education-form.component';
+import { EducationFormComponent } from '../../components/education-form/education-form.component';
 
 @Component({
   selector: 'app-education-details',
@@ -65,10 +65,6 @@ export class EducationDetailsComponent implements OnInit {
 
       this._router.navigateByUrl('/education');
     });
-  }
-
-  showEdcuDetails(education: Education) {
-    this._router.navigateByUrl('/education/' + education.id);
   }
 
   setId(id: number) {

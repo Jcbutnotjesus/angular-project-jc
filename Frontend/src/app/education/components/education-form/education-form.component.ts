@@ -45,6 +45,14 @@ export class EducationFormComponent implements OnInit {
         this.data.isUpdateMode ? this.data.educationToUpdate.link : '',
         Validators.required,
       ],
+      keyWords: [
+        this.data.isUpdateMode ? this.data.educationToUpdate.keyWords : '',
+        Validators.required,
+      ],
+      schoolId: [
+        this.data.isUpdateMode ? this.data.educationToUpdate.schoolId : '',
+        Validators.required,
+      ],
     });
   }
 
