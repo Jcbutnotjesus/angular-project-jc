@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EducationListComponent } from './pages/education-list/education-list.component';
 import { EducationDetailsComponent } from './pages/education-details/education-details.component';
-import { EducationListComponent } from './pages/education-list/education-list.component';
 import { EducationComponent } from './education.component';
+import { EducationListComponent } from './pages/education-list/education-list.component';
 
 const routes: Routes = [
   {

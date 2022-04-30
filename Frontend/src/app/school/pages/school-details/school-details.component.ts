@@ -35,7 +35,6 @@ export class SchoolDetailsComponent implements OnInit {
     this._activatedRoute.params.subscribe((params) => {
       this.fetchData(params['id']);
       this.fetchDataEducation(params['id']);
-      this.education$ = this._schoolService.getEducationBySchool(params['id']);
     });
   }
 
@@ -84,6 +83,10 @@ export class SchoolDetailsComponent implements OnInit {
 
       this._router.navigateByUrl('/school');
     });
+  }
+
+  showEdcuDetails(school: School) {
+    this._router.navigateByUrl('/school/' + school.id);
   }
 
   setId(id: number) {

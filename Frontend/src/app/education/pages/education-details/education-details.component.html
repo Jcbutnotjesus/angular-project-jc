@@ -1,0 +1,31 @@
+<h3>education details</h3>
+<mat-card class="card" *ngIf="education$ | async; let education">
+  <mat-card-title class="schoolTitle">{{
+    education.educationName | titlecase
+  }}</mat-card-title>
+  <mat-card-subtitle
+    ><a href="{{ education.link }}" target="_blank">{{
+      education.link | lowercase
+    }}</a></mat-card-subtitle
+  >
+  <mat-card-subtitle>{{ education.keyWords }}</mat-card-subtitle>
+  >
+
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      color="warn"
+      (click)="deleteEducation(education.id)"
+    >
+      Delete
+    </button>
+    <!-- <button
+      mat-raised-button
+      color="primary"
+      (click)="updateEducation(education)"
+    > -->
+    <!-- Update
+    </button> -->
+  </mat-card-actions>
+</mat-card>
+<button mat-raised-button color="warn" (click)="goBack()">Go Back</button>

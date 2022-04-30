@@ -12,7 +12,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatTableModule } from '@angular/material/table';
-import { EducationListComponent } from './pages/education-list/education-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,6 @@ import { EducationListComponent } from './pages/education-list/education-list.co
     SchoolListComponent,
     SchoolDetailsComponent,
     SchoolFormComponent,
-    EducationListComponent,
   ],
   imports: [
     CommonModule,
