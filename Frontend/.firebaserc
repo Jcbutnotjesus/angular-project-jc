@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-project-jc": {
+      "hosting": {
+        "lp-dim-app": [
+          "angular-project-jc"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-project-jc"
+  }
+}
