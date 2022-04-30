@@ -113,7 +113,7 @@
             "ssr": false,
             "browserTarget": "lp-dim-app:build:production",
             "firebaseProject": "angular-project-jc",
-            "firebaseHostingSite": "angular-project-jc"
+            "firebaseHostingSite": "angularjc"
           }
         }
       }
